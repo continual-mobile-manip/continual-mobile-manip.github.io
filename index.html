@@ -3,22 +3,6 @@
 <head>
   <title>Continuously Improving Mobile Manipulation with Autonomous Real-World RL</title>
 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet"> -->
-
-  <!-- <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script> -->
-
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
 
@@ -54,8 +38,13 @@
             <h1 class="title is-1 publication-title">Continuously Improving Mobile Manipulation with Autonomous Real-World RL</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a> Anonymous Authors</a>     
-               <span class="brmod" ><b>In Submission</b></span>
+                <a target="_blank" href="https://russellmendonca.github.io/">Russell Mendonca</a><sup>1</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://www.linkedin.com/in/emmanuel-panov-571065194/">Emmanuel Panov</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://bucherb.github.io/">Bernadette Bucher</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://www.robo.guru/">Jiuguang Wang</a><sup>2</sup>&nbsp;&nbsp;&nbsp;
+                <a target="_blank" href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a><sup>1</sup>
+                <br /><sup>1</sup>Carnegie Mellon University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Boston Dynamics AI Institute&nbsp;&nbsp;
+                <span class="brmod" style="color:rgb(183, 0, 0)"><b>CoRL 2024</b></span>
               </span>
             </div>
             <div class="column has-text-centered">
@@ -171,11 +160,11 @@
 
               <div class="row">
                 <div class="col" >            
-                    <video class="center" controls playsinline autoplay loop muted src="./resources/chairmove_tablemiddle_timelapse.mp4" width="100%"
+                    <video class="center" controls playsinline autoplay loop muted src="./resources/chair_middle_tl.mp4" width="100%"
                            style="border-radius:10px; "></video>
                 </div>
                 <div class="col">
-                  <video class="center" controls playsinline autoplay loop muted src="./resources/chairmove_timelapse.mp4" width="100%"
+                  <video class="center" controls playsinline autoplay loop muted src="./resources/chair_corner_tl.mp4" width="100%"
                       style="border-radius:10px; "></video>
                   <!-- <img src="./resources/figures/strength.PNG" alt="Strength Results Table"  width="98%"> -->
                 </div>
@@ -214,7 +203,7 @@ the third describes how to define learning signal for tasks. -->
           <div class="columns is-centered">
             <div class="column is-three-quarters has-text-centered">
                 <div class="interpolation-panel">
-                    <div class="content" style="text-align: left;">
+                    <div class="columns is-centered" style="text-align: left;">
                         <div style="display: inline-block; text-align: left;">
                             <p style="font-size: 18px">
                                 <b>Task-relevant Autonomy:</b> Ensures data collected is likely to have learning signal
@@ -253,7 +242,9 @@ the third describes how to define learning signal for tasks. -->
               <div class="content has-text-centered">
                 <p style = "font-size: 20px">
                   The full action space for the robot (<b>left</b>) is very large, and it rarely interacts with objects. <br>
-                  Our approach leads the robot to grasp objects (<b>right</b>) before exploring actions.
+                  Our approach leads the robot to grasp objects (<b>right</b>), leading to data with better signal. <br>
+                  Note that the robot isn't yet performing the task of standing up the dustpan.
+
                 </p>
               </div>  
               <div class="row">
@@ -280,16 +271,115 @@ the third describes how to define learning signal for tasks. -->
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"> Task Relevant Autonomy : Goal-Cycles</h3>
+          <tr>
+           </tr>
+          <tr>
+            <td>
+              <div class="content has-text-centered">
+                <p style = "font-size: 20px">
+                  Goal cycles ensure the robot can keep learning without stagnation.
+                </p>
+              </div>  
+              <div class="row">
+                <div class="columns is-centered" >            
+                    <video class="center" controls playsinline autoplay loop muted src="./resources/goal_cycle_spotRL.mp4" width="50%"
+                           style="border-radius:10px; "></video>
+                </div>
+               
+              </div>
+  
+              <br>
+              
+              
+                </div>
+              </div>
+            </td>
+          </tr>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  
+  
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"> Efficient Control: What Priors do we use?</h3>
+          <tr>
+           </tr>
+          <tr>
+            <td>
+              <div class="content has-text-centered">
+                <p style = "font-size: 20px">
+                  Leveraging priors helps collect data with better learning signal.
+                </p>
+              </div>  
+              <div class="row">
+                <div class="col" >            
+                    <!-- <video class="center" controls playsinline autoplay loop muted src="./resources/rand_actions.mp4" width="100%"
+                           style="border-radius:10px; "></video> -->
+                    
+                    <img src="resources/prior1.png"  style="border: 1px; border-radius:10px; width: 80%;">
+                    <p style="font-size: 18px">
+                        Planners (rrt*) with simplified models, <br> for navigation (chair)
+                    </p>
+                </div>
+                <div class="col">
+                  <!-- <video class="center" controls playsinline autoplay loop muted src="./resources/autonomy_dustpan.mp4" width="100%"
+                      style="border-radius:10px; "></video> -->
+
+                    <img src="resources/prior2.png"  style="border: 1px; border-radius:10px; width: 72%;">
+                    <p style="font-size: 18px">
+                      Movement restriction based on <br>distance to detected object (sweeping)
+                    </p>
+                  <!-- <img src="./resources/figures/strength.PNG" alt="Strength Results Table"  width="98%"> -->
+                </div>
+
+                <div class="col">
+                  <!-- <video class="center" controls playsinline autoplay loop muted src="./resources/autonomy_dustpan.mp4" width="100%"
+                      style="border-radius:10px; "></video> -->
+
+                    <img src="resources/prior3.png"  style="border: 1px; border-radius:10px; width: 80%;">
+                    <p style="font-size: 18px">
+                      Simple scripted behavior (dustpan standup)
+                    </p>
+                  <!-- <img src="./resources/figures/strength.PNG" alt="Strength Results Table"  width="98%"> -->
+                </div>
+              </div>
+  
+              <br>
+              
+              
+                </div>
+              </div>
+            </td>
+          </tr>
+        </div> 
+      </div>
+    </div>
+  </section>
+
   <section class="section" style="width: 100%; margin: 0 auto;">
     <div class="container">
       <div class="columns is-centered">
 
 
         <div class="column is-full-width">
-          <h3 class="title is-3" style="text-align: center; padding-bottom: 5px;"><strong>Efficient Continual Improvement</strong></h3>    
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 5px;"><strong>Efficient Control: RL + Priors </strong></h3>    
           <div class="content has-text-centered">
             <p style = "font-size: 20px">
-            We combine RL with behavior priors to learn with very few samples. <br> Note all approaches shown use task-relevant autonomy.
+            We combine RL with behavior priors to learn with very few samples. 
+            <br> Priors while useful are not sufficient to reliably perform the task. RL without priors is very inefficient.
+            <br> Note all compared approaches shown use <b>task-relevant autonomy</b>.
             </p>
           </div>  
           
@@ -313,6 +403,9 @@ the third describes how to define learning signal for tasks. -->
       </div>
     </div>
   </section>
+
+
+  
 
   <section class="section">
     <div class="container">
@@ -355,12 +448,61 @@ the third describes how to define learning signal for tasks. -->
     </div>
   </section>
 
+  
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;"> RL Discovery</h3>
+          <tr>
+           </tr>
+          <tr>
+            <td>
+              <div class="content has-text-centered">
+                <p style = "font-size: 20px">
+                  With higher policy entropy, RL sometimes discovers new behaviors that complete the task, quite different from the prior.
+                </p>
+              </div>  
+              <div class="row">
+                <div class="columns is-centered" >            
+                    <video class="center" controls playsinline autoplay loop muted src="./resources/dustpan_standup_emergent.mp4" width="50%"
+                           style="border-radius:10px; "></video>
+                </div>
+               
+              </div>
+  
+              <br>
+              
+              
+                </div>
+              </div>
+            </td>
+          </tr>
+        </div> 
+      </div>
+    </div>
+  </section>
 
   
 
 
 
-
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="titile">BibTeX</h2>
+      <pre><code>@inproceedings{mendonca2024continuously,
+              title={Continuously Improving Mobile Manipulation with Autonomous Real-World RL},
+              author={Mendonca, Russell and Panov, Emmanuel and Bucher, Bernadette and Wang, Jiuguang and Pathak, Deepak},
+              journal={Conference on Robot Learning},
+              year={2024}
+            }</code></pre>
+    </div>
+  </section>
+  
+  
+  
+  
+  
 
 <footer class="footer">
   <div class="container">
